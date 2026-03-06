@@ -1,122 +1,116 @@
 <!DOCTYPE html>
 <html lang="zh">
-<head>
-<meta charset="UTF-8">
-<title>Hello World</title>
+    <head>
+        <meta charset="UTF-8">
+        <title>Hello World</title>
 
-<style>
-body{
-    font-family: "Segoe UI", Arial, sans-serif;
-    background:#f5f7fa;
-    text-align:center;
-    margin:0;
-}
+        <style>
+        body{
+            font-family: "Segoe UI", Arial, sans-serif;
+            background:#f5f7fa;
+            text-align:center;
+            margin:0;
+        }
 
-.container{
-    width:800px;
-    margin:40px auto;
-    background:white;
-    padding:40px;
-    border-radius:12px;
-    box-shadow:0 8px 20px rgba(0,0,0,0.08);
-}
+        .container{
+            width:800px;
+            margin:40px auto;
+            background:white;
+            padding:40px;
+            border-radius:12px;
+            box-shadow:0 8px 20px rgba(0,0,0,0.08);
+        }
 
-h1{
-    color:rgb(197,151,12);
-    font-size:48px;
-    margin-bottom:10px;
-}
+        h1{
+            color:rgb(197,151,12);
+            font-size:48px;
+            margin-bottom:10px;
+        }
 
-.id{
-    color:rgb(197,151,12);
-    font-size:16px;
-    letter-spacing:2px;
-}
+        .id{
+            color:rgb(197,151,12);
+            font-size:16px;
+            letter-spacing:2px;
+        }
 
-.buttons{
-    margin:25px 0;
-}
+        .buttons{
+            margin:25px 0;
+        }
 
-button{
-    border:none;
-    padding:12px 22px;
-    margin:8px;
-    font-size:16px;
-    border-radius:8px;
-    cursor:pointer;
-    transition:all 0.2s;
-}
+        button{
+            border:none;
+            padding:12px 22px;
+            margin:8px;
+            font-size:16px;
+            border-radius:8px;
+            cursor:pointer;
+            transition:all 0.2s;
+        }
 
-button:hover{
-    transform:translateY(-2px);
-    box-shadow:0 4px 10px rgba(0,0,0,0.15);
-}
+        button:hover{
+            transform:translateY(-2px);
+            box-shadow:0 4px 10px rgba(0,0,0,0.15);
+        }
 
-.yellow{background:#f4d03f;}
-.green{background:#58d68d;}
-.red{background:#ec7063;}
+        .yellow{background:#f4d03f;}
+        .green{background:#58d68d;}
+        .red{background:#ec7063;}
 
-img{
-    margin-top:20px;
-    width:400px;
-    border-radius:10px;
-    box-shadow:0 6px 15px rgba(0,0,0,0.15);
-}
+        img{
+            margin-top:20px;
+            width:400px;
+            border-radius:10px;
+            box-shadow:0 6px 15px rgba(0,0,0,0.15);
+        }
 
-.footer{
-    margin-top:30px;
-    color:#666;
-    font-style:italic;
-}
+        .footer{
+            margin-top:30px;
+            color:#666;
+            font-style:italic;
+        }
 
-a{
-    color:#0077cc;
-    text-decoration:none;
-}
+        a{
+            color:#0077cc;
+            text-decoration:none;
+        }
 
-a:hover{
-    text-decoration:underline;
-}
-</style>
+        a:hover{
+            text-decoration:underline;
+        }
+        </style>
+    </head>
 
-</head>
+    <body>
+        <div class="container">
+            <h1>HELLO WORLD</h1>
+        <div class="id">LZC 251218</div>
 
-<body>
+        <hr>
+            <div class="buttons">
+            <button class="yellow" onclick="this.style.backgroundColor='yellow'">CLICK ME</button>
+            <button class="green" onclick="this.style.backgroundColor='green'">CLICK ME</button>
+            <button class="red" onclick="this.style.backgroundColor='red'">CLICK ME</button>
+            </div>
+        <hr>
 
-<div class="container">
+        <div class="footer">
+            College Of Engineering, Peking Univ.
+        </div>
 
-<h1>HELLO WORLD</h1>
-<div class="id">LZC 251218</div>
+        <p>
+            <a href="https://www.coe.pku.edu.cn" target="_blank">
+            北京大学工学院
+            </a>
+        </p>
 
-<hr>
+        <img src="./images/gxc_guitarist.png">
 
-<div class="buttons">
-<button class="yellow" onclick="this.style.backgroundColor='yellow'">CLICK ME</button>
-<button class="green" onclick="this.style.backgroundColor='green'">CLICK ME</button>
-<button class="red" onclick="this.style.backgroundColor='red'">CLICK ME</button>
-</div>
+        <p>
+            <a href="./images/gxc_guitarist.png" download="GXC.png">
+            点击下载工小成
+            </a>
+        </p>
 
-<hr>
-
-<div class="footer">
-College Of Engineering, Peking Univ.
-</div>
-
-<p>
-<a href="https://www.coe.pku.edu.cn" target="_blank">
-北京大学工学院
-</a>
-</p>
-
-<img src="./images/gxc_guitarist.png">
-
-<p>
-<a href="./images/gxc_guitarist.png" download="GXC.png">
-点击下载工小成
-</a>
-</p>
-
-</div>
-
-</body>
+        </div>
+    </body>
 </html>
