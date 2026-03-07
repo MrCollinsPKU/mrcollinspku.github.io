@@ -2,28 +2,54 @@
 <html lang="en-US">
     <head>
         <meta charset="UTF-8">
-        <title>Mr.Collins' Homepage</title>
+        <title>LIN's Homepage</title>
         <link rel="stylesheet" href="style.css">
         <link rel="icon" type="image/png" href="./images/favicon.png">
     </head>
 
     <body>
-        <div class="container">
+        <div class="main-container">
             
-            <!-- WEB TITLE -->
-            <h1>MrCollinsPKU.github.io</h1>
-            <div class="id">Zichen LIN's homepage</div>
+            <header id="site-header">
+                
+                <div class="header-top">
+                    
+                    <!-- TITLE -->
+                    <div class="title-bar">
+                        <img src="./images/favicon.png" class="title_logo">
+                        <h1 class="site-title">MrCollinsPKU.github.io</h1>
+                    </div>
+
+                    <div class="id">Welcome to Zichen LIN's homepage.</div>
+                    
+                    <!-- MENU -->
+                    
+                    <nav class="menu">
+                        <a href="index.html">主页 | Home</a>
+                        <a href="artworks.html">作品 | Artworks</a>
+                        <a href="reviews.html">乐评 | Reviews</a>
+                    </nav>
+                    
+                </div>
+                
+                <!-- PAGE TITLE -->
+                <h2 class = "page-title">主页 | Home</h2>
+
+            </header>
+            <div id="scroll-trigger"></div>
+
+            <!-- CONTENT-->
+            <h3>关于网站</h3>
+            <p class="cn">你好！</p>
+            <p class="cn">这是我的个人网站，2026年3月开始施工，部署于 <a href="https://pages.github.com/">GitHub Pages</a>。我计划在这里展示我的个人作品，发表乐评。</p>
             
-            <!-- MENU -->
-            <hr>
-            <nav class="menu">
-                <a href="index.html">Home</a>
-                <a href="artworks.html">Artworks</a>
-            </nav>
-            <hr>
-            
-            <!-- HEADLINE -->
-            <h2>Home</h2>
+            <h3>关于站主</h3>
+
+            <h3>缘起</h3>
+            <p class="cn">编写这个网站的契机大概是闫鸿飞老师“数据结构与算法 (B)”课程群里的一条消息：</p>
+            <p class="cn">“推荐大家申请个 github 账号，开个自己的主页。我的如下”</p>
+            <p class="cn">闫老师发了张截图，展示了他的主页：一串课程链接。尽管它如此简单，但它是独属于闫老师的，是闫老师的“个人作品”。这实在是一件很浪漫的事。</p>
+
 
             <!-- FOOTER -->
             <footer>
@@ -34,6 +60,25 @@
         </div>
         
         <script>
+        /* header 收缩 */
+        const header = document.getElementById("site-header");
+        const trigger = document.getElementById("scroll-trigger");
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if(!entry.isIntersecting){
+                    header.classList.add("compact");
+                } else {
+                    header.classList.remove("compact");
+                }
+            },
+            {
+                rootMargin: "-80px 0px 0px 0px"
+            }
+        );
+
+        observer.observe(trigger);
+
         /* 当前选项高亮效果 */
         const links = document.querySelectorAll(".menu a");
         const current = window.location.pathname;
