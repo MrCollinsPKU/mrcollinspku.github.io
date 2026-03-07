@@ -7,8 +7,4 @@
 - 发表乐评
 ----------
 
-<<<<<<< HEAD
 我的邮箱：**zclin25@stu.pku.edu.cn**<br>
-=======
-我的邮箱：**zclin25@stu.pku.edu.cn**<br>
->>>>>>> b09847d08ded275d61545d1167bcc0ef40189b74
