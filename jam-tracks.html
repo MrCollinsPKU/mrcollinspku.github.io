@@ -2,6 +2,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="UTF-8">
+        <meta name="page-title" content="即兴伴奏 | Jam Tracks">
         <title>Mr. Collins' Homepage</title>
         <link rel="stylesheet" href="style.css">
         <link rel="icon" type="image/png" href="./images/favicon.png">
@@ -10,82 +11,18 @@
     <body>
         <div class="main-container">
             
-            <header id="site-header">
-                
-                <div class="header-top">
-                    
-                    <!-- TITLE -->
-                    <div class="title-bar">
-                        <img src="./images/favicon.png" class="title_logo">
-                        <h1 class="site-title">MrCollinsPKU.github.io</h1>
-                    </div>
-
-                    <div class="id">Welcome to Mr. Collins LZC's homepage.</div>
-                    
-                    <!-- MENU -->
-                    
-                    <nav class="menu">
-                        <a href="index.html">主页 | Home</a>
-                        <a href="artworks.html">作品 | Artworks</a>
-                        <a href="reviews.html">乐评 | Reviews</a>
-                        <a href="jam-tracks.html">即兴伴奏 | Jam Tracks</a>
-                    </nav>
-                    
-                </div>
-                
-                <!-- PAGE TITLE -->
-                <h2 class = "page-title">即兴伴奏 | Jam Tracks</h2>
-
-            </header>
+            <!-- HEADER -->
+            <div id="header-placeholder" class="placeholder"></div>
             <div id="scroll-trigger"></div>
 
-            <!-- PARAGRAPH-->
+            <!-- CONTENT-->
             <p class="cn">////// 待施工 //////</p>
             
             <!-- FOOTER -->
-            <footer>
-            © 2026 Mr. Collins LZC<br>
-            Hosted on <a href="https://pages.github.com/">GitHub Pages</a>. 
-            Last updated: <span id="last-updated"></span>
-            </footer>
+            <div id="footer-placeholder" class="placeholder"></div>
         </div>
 
-        <script>
-        /* header 收缩 */
-        const header = document.getElementById("site-header");
-        const trigger = document.getElementById("scroll-trigger");
+        <script src="scripts.js"></script>
 
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if(!entry.isIntersecting){
-                    header.classList.add("compact");
-                } else {
-                    header.classList.remove("compact");
-                }
-            },
-            {
-                rootMargin: "-150px 0px 0px 0px"
-            }
-        );
-
-        observer.observe(trigger);
-
-        /* 当前选项高亮效果 */
-        const links = document.querySelectorAll(".menu a");
-        const current = window.location.pathname;
-
-        links.forEach(link => {
-            if(current.includes(link.getAttribute("href"))){
-                link.classList.add("active");
-            }
-        });
-
-        /* 自动追踪更新日期 */
-        const date = new Date(document.lastModified);
-        document.getElementById("last-updated").textContent =
-            date.getFullYear() + "-" +
-            String(date.getMonth()+1).padStart(2,'0') + "-" +
-            String(date.getDate()).padStart(2,'0');
-        </script>
     </body>
 </html>

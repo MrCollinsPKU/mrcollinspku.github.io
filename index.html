@@ -2,6 +2,7 @@
 <html lang="zh-CN">
     <head>
         <meta charset="UTF-8">
+        <meta name="page-title" content="主页 | Home">
         <title>Mr. Collins' Homepage</title>
         <link rel="stylesheet" href="style.css">
         <link rel="icon" type="image/png" href="./images/favicon.png">
@@ -10,92 +11,33 @@
     <body>
         <div class="main-container">
             
-            <header id="site-header">
-                
-                <div class="header-top">
-                    
-                    <!-- TITLE -->
-                    <div class="title-bar">
-                        <img src="./images/favicon.png" class="title_logo">
-                        <h1 class="site-title">MrCollinsPKU.github.io</h1>
-                    </div>
-
-                    <div class="id">Welcome to Mr. Collins LZC's homepage.</div>
-                    
-                    <!-- MENU -->
-                    
-                    <nav class="menu">
-                        <a href="index.html">主页 | Home</a>
-                        <a href="artworks.html">作品 | Artworks</a>
-                        <a href="reviews.html">乐评 | Reviews</a>
-                        <a href="jam-tracks.html">即兴伴奏 | Jam Tracks</a>
-                    </nav>
-                    
-                </div>
-                
-                <!-- PAGE TITLE -->
-                <h2 class = "page-title">主页 | Home</h2>
-
-            </header>
+            <!-- HEADER -->
+            <div id="header-placeholder" class="placeholder"></div>
             <div id="scroll-trigger"></div>
 
             <!-- CONTENT-->
-            <h3>关于网站</h3>
+            <h3>关于本站</h3>
                 <p class="cn">你好！</p>
                 <p class="cn">这是我的个人网站，2026年3月开始施工，部署于 <a href="https://pages.github.com/">GitHub Pages</a>。我计划在这里展示我的个人作品，发表乐评，编写 Jam Tracks 目录。</p>
-            
+                <p class="cn">网站是完全静态的，且只针对电脑端进行了设计排版。</p>
+
             <h3>关于站主</h3>
+                <p class="cn">P 大大一学生，常为院学生会宣传部搞点设计，热爱 Blues, Rock, Jazz 音乐。</p>
 
             <h3>缘起</h3>
                 <p class="cn">编写这个网站的契机大概是闫宏飞老师“数据结构与算法 (B)”课程群里的一条消息：</p>
                 <p class="cn">“推荐大家申请个 github 账号，开个自己的主页。我的如下”</p>
                 <p class="cn">闫老师发了张截图，展示了<a href="https://gmyhf.github.io/">他的主页</a>：一串课程链接。它如此简单，但它是独属于闫老师的。闫老师当然不乏独属于他自己的作品，但通过部署个人网站，我也可以展示自己那一点点的独创，这实在是一件很浪漫的事。</p>
-                <p class="cn">于是我打开了自己上学期写的一个简陋的.hmtl文件：“Hello World”、学院官网链接、“吉他手工小成”图片和下载链接、以及一些莫名其妙的变色按钮。仍记得北大的超长寒假刚开始时，我还励志学好 html。但那简陋的文件刚放假时是什么样，开学了就还是什么样。（待续）</p>
-
+                <p class="cn">于是我打开了自己上学期写的一个简陋的 .hmtl 文件：“Hello World”、学院官网链接、“吉他手工小成”图片和下载链接、以及一些莫名其妙的变色按钮。仍记得 P 大的超长寒假刚开始时，我还励志学好 html 。但那简陋的文件刚放假时是什么样，开学了还是什么样。（待续）</p>
+                <p class="cn">我向 ChatGPT 老师请教怎么部署 Github Pages ，又让他帮我美化了一下简陋的文件。在我按自己的审美改了UI，并把工小成图片放在了另一个“Artworks”页面之后，我的第一个网站就上线了。</p>
+                <p class="cn">这天是2026年3月6日星期五，晚上我躺在宿舍床上非常兴奋，脑中构想了无数的可能。这个周末，我几乎一半的空余时间都在花在了敲代码上。我规范了文件结构、添加了滚动收缩的 Header（这顽物后来让我 debug 了一整节膝盖课）、组件化了各个元素，终于让这个网站像了点样。想来真要感谢 ChatGPT 老师不断地为我指明方向，不然我是很难下手的。</p>
+            
             <!-- FOOTER -->
-            <footer>
-            © 2026 Mr. Collins LZC<br>
-            Hosted on <a href="https://pages.github.com/">GitHub Pages</a>. 
-            Last updated: <span id="last-updated"></span>
-            </footer>
+            <div id="footer-placeholder" class="placeholder"></div>
+
         </div>
-        
-        <script>
-        /* header 收缩 */
-        const header = document.getElementById("site-header");
-        const trigger = document.getElementById("scroll-trigger");
 
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if(!entry.isIntersecting){
-                    header.classList.add("compact");
-                } else {
-                    header.classList.remove("compact");
-                }
-            },
-            {
-                rootMargin: "-150px 0px 0px 0px"
-            }
-        );
+        <script src="scripts.js"></script>
 
-        observer.observe(trigger);
-
-        /* 当前选项高亮效果 */
-        const links = document.querySelectorAll(".menu a");
-        const current = window.location.pathname;
-
-        links.forEach(link => {
-            if(current.includes(link.getAttribute("href"))){
-                link.classList.add("active");
-            }
-        });
-
-        /* 自动追踪更新日期 */
-        const date = new Date(document.lastModified);
-        document.getElementById("last-updated").textContent =
-            date.getFullYear() + "-" +
-            String(date.getMonth()+1).padStart(2,'0') + "-" +
-            String(date.getDate()).padStart(2,'0');
-        </script>
     </body>
 </html>
