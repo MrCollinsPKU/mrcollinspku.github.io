@@ -241,9 +241,7 @@ header.compact .page-title{
 .img_showcase{
     display: block;
     margin: 28px auto;
-
-    width:400px;
-
+    text-align: center;
     border-radius:10px;
     box-shadow:0 6px 15px rgba(0,0,0,0.15);
 }
@@ -252,9 +250,8 @@ header.compact .page-title{
     font-size:14px;
     color:#666;
     text-align:center;
-    
-    margin-top:6px;
     margin-top:20px;
+    text-indent: 0;
 }
 /* =================================
    链接样式（Links）
