@@ -103,90 +103,6 @@ footer {
     text-align: center;
 }
 
-/* =================================
-   顶条（Header）
-   ================================= */
-
-header{
-    font-family: 
-        "Georgia",
-        "Noto Serif SC",
-        "Source Han Serif SC",
-        "Songti SC",
-        serif;
-    position: sticky;
-    top: 0;
-    background: white;
-    z-index: 1000;
-    border-bottom: 1px solid #ddd;
-    padding: 10px 0;
-    transition: opacity 0.25s ease, padding 0.25s ease;
-}
-.site-title{
-    margin: 0px;
-    transition: opacity 0.25s ease, padding 0.25s ease;
-}
-
-.header-top{
-    padding:5px 0;
-    display:flex;
-    flex-direction:column;
-    transition: opacity 0.25s ease, padding 0.25s ease;
-}
-
-.page-title{
-    margin: 0px;
-    transition: opacity 0.25s ease, padding 0.25s ease;
-}
-
-.id {
-    color: rgb(84, 84, 84);
-    font-size: 16px;
-    margin-top: -3px;
-    transition: opacity 0.25s ease, padding 0.25s ease;
-}
-
-#scroll-trigger{
-    height:1px;
-}
-
-/* 滚动后的状态 */
-header.compact .header-top{
-    padding:0px 0;
-    display:flex;
-    flex-direction:row;
-    align-items:center;
-    justify-content:flex-start;
-    gap: 0px;  
-}
-
-header.compact .site-title{
-    font-size: 0;
-    opacity:0;
-    width:0;
-    overflow:hidden;
-}
-
-header.compact .id{
-    font-size: 0;
-    opacity:0;
-    width:0;
-    overflow:hidden;
-}
-
-header.compact .menu{
-    margin-top:0;
-    margin-bottom: 3px;
-    display:inline-flex;
-    gap:15px;
-    font-size: 14px;
-}
-
-header.compact .page-title{
-    font-size: 16px;
-    margin-top: 2px;
-}
-
 
 /* =================================
    菜单区域（Menu section）
@@ -240,19 +156,30 @@ header.compact .page-title{
 
 .img_showcase{
     display: block;
-    margin: 28px auto;
+    margin: 28px auto 10px auto;
+    
+    width:50%;
+    max-width:560px;
     text-align: center;
+
     border-radius:10px;
     box-shadow:0 6px 15px rgba(0,0,0,0.15);
+
+    transition: transform 0.25s ease;
+}
+
+.img_showcase:hover{
+    transform: scale(1.03);
 }
 
 .caption {
     font-size:14px;
     color:#666;
     text-align:center;
-    margin-top:20px;
+    margin-top:16px;
     text-indent: 0;
 }
+
 /* =================================
    链接样式（Links）
    ================================= */
@@ -264,4 +191,114 @@ a {
 
 a:hover {
     text-decoration: underline;
+}
+
+/* =================================
+   资源样式（Resources）
+   ================================= */
+.resource {
+    display:flex;
+    flex-direction:row;
+    margin-bottom:6px;
+    padding: 0 24px 0 32px;
+}
+
+.resource p{
+    margin-top: 0;
+    margin-bottom: 0;
+    text-indent: 0;
+}
+
+.resource-title {
+    font-weight: bold;
+}
+
+.resource-meta {
+    color:#666;
+    margin-left: auto;
+}
+
+/* =================================
+   顶条（Header）
+   ================================= */
+
+header{
+    font-family: 
+        "Georgia",
+        "Noto Serif SC",
+        "Source Han Serif SC",
+        "Songti SC",
+        serif;
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 1000;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+    transition: opacity 0.25s ease, padding 0.25s ease;
+}
+.site-title{
+    margin: 0px;
+    transition: opacity 0.25s ease, padding 0.25s ease;
+}
+
+.header-top{
+    padding:5px 0;
+    display:flex;
+    flex-direction:column;
+    transition: opacity 0.25s ease, padding 0.25s ease;
+}
+
+.page-title{
+    margin-top: 6px;
+    margin-bottom: 0px;
+    transition: opacity 0.25s ease, padding 0.25s ease;
+}
+
+.id {
+    color: rgb(84, 84, 84);
+    font-size: 16px;
+    margin-top: -3px;
+    transition: opacity 0.25s ease, padding 0.25s ease;
+}
+
+#scroll-trigger{
+    height:1px;
+}
+
+/* 滚动后的状态 */
+header.compact .header-top{
+    padding:0px 0;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:flex-start;
+    gap: 0px;  
+}
+
+header.compact .site-title{
+    font-size: 0;
+    opacity:0;
+    width:0;
+    overflow:hidden;
+}
+
+header.compact .id{
+    font-size: 0;
+    opacity:0;
+    width:0;
+    overflow:hidden;
+}
+
+header.compact .menu{
+    margin-top:0;
+    margin-bottom: 3px;
+    display:inline-flex;
+    gap:15px;
+    font-size: 14px;
+}
+
+header.compact .page-title{
+    font-size: 16px;
+    margin-top: 2px;
 }
