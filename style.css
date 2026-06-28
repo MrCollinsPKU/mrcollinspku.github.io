@@ -13,10 +13,26 @@ body {
         "Source Han Serif SC",
         "Songti SC",
         serif;
-    background: var(--main-lighter);
+    background-color: var(--main-lighter);
     line-height: 1.6;
     margin: 0;
     color: #333;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background-image: url("images/gxc_pattern.png");
+    background-size: 120px 120px;
+    background-repeat: repeat;
+    image-rendering: pixelated;
+    transform: rotate(-15deg);
+    pointer-events: none;
+    z-index: -1;
 }
 
 

@@ -1,8 +1,12 @@
-/* HEADER 插入 */
-fetch('components/header.html')
-.then(response => response.text())
-.then(data => {
-    document.getElementById('header-placeholder').innerHTML = data;
+/* 并行获取 HEADER + FOOTER */
+Promise.all([
+    fetch('components/header.html').then(r => r.text()),
+    fetch('components/footer.html').then(r => r.text())
+])
+.then(([headerHtml, footerHtml]) => {
+
+    /* HEADER 插入 */
+    document.getElementById('header-placeholder').innerHTML = headerHtml;
 
     /* 读取 PAGE-TITLE */
     document.querySelector(".page-title").textContent
@@ -38,15 +42,11 @@ fetch('components/header.html')
         }
     });
 
-})
 
-/* FOOTER 插入 */
-fetch('components/footer.html')
-.then(response => response.text())
-.then(data => {
-    document.getElementById('footer-placeholder').innerHTML = data;
+    /* FOOTER 插入 */
+    document.getElementById('footer-placeholder').innerHTML = footerHtml;
 
-    // 自动追踪更新日期（必须在 footer 插入后执行）
+    // 自动追踪更新日期
     const date = new Date(document.lastModified);
     document.getElementById("last-updated").textContent =
         date.getFullYear() + "-" +
